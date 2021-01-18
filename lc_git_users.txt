@@ -1,2 +1,3 @@
 firstname,lastname,email,git_username,repository_name
 Bilal,Dawood,bilaldawood099@outlook.com,BilalDawood01,2021_ENCM369
+connor,farrell,connor.farrell@ucalgary.ca,ConnorFLC10,2021_ENCM369
