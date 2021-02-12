@@ -88,7 +88,10 @@ Promises:
 */
 void GpioSetup(void)
 {
-  
+    LATA = 0x00;
+    TRISA = 0x00;
+    ANSELA = 0x00;
+    LATA = 0x80;//for last LED on counter (acts as last bit)
   
 } /* end GpioSetup() */
 
