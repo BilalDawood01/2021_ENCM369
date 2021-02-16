@@ -27324,5 +27324,6 @@ void UserAppRun(void)
     {
         LATA++;
         u32_last = RB5;
+        _delay((unsigned long)((250)*(64000000/4000.0)));
     }
 }

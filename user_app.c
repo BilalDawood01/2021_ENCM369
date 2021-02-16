@@ -103,6 +103,7 @@ void UserAppRun(void)
     {
         LATA++;
         u32_last = RB5;
+        __delay_ms(250);
     }
 } /* end UserAppRun */
 
