@@ -95,9 +95,9 @@ Promises:
 void UserAppRun(void)
 { 
     static u32 u32_last = 0;//Keeps track of last state.
-    u32 u32Max = 0xBF; //why is it BF and not 0111 1111 = 0x7F
-    if(LATA == u32Max){//Makes sure 0111 1111 is the max counter value we can have. Resets to 0100 0000
-        LATA = 0x80;//why isnt this 0x40? isnt that 0100 0000
+    u32 u32Max = 0xBF; //BF because LED 7 is connected to RA7 so 1011 1111 is max.
+    if(LATA == u32Max){//Makes sure 1011 1111 is the max counter value we can have. Resets to 1000 0000
+        LATA = 0x80;//we're connected to RA7, so min 1000 0000
     }
     if(RB5 != u32_last)
     {
