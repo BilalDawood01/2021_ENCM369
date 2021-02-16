@@ -27316,7 +27316,6 @@ void UserAppInitialize(void)
 void UserAppRun(void)
 {
 
-    static u32 u32_last= 0;
 
     LATA = 0x80;
 
@@ -27325,10 +27324,15 @@ void UserAppRun(void)
 
 
 
-    if(RB5 != u32_last)
+    if(RB5 ==1)
     {
         LATA++;
-        u32_last = RB5;
+
     }
+
+
+
+
+
 
 }
