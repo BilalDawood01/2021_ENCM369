@@ -2556,38 +2556,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> -> 0 `i `l `ul
 ]
 "99
-[; ;user_app.c: 99:     LATA = 0x80;
+[; ;user_app.c: 99:     u32 u32Counter;
+[v _u32Counter `ul ~T0 @X0 1 a ]
+"100
+[; ;user_app.c: 100:     u32 u32Max = 0x7F;
+[v _u32Max `ul ~T0 @X0 1 a ]
+[e = _u32Max -> -> -> 127 `i `l `ul ]
+"101
+[; ;user_app.c: 101:     LATA = 0x80;
 [e = _LATA -> -> 128 `i `uc ]
-"106
-[; ;user_app.c: 106:     if(RB5 == 1)
-[e $ ! == -> _RB5 `i -> 1 `i 2274  ]
-"107
-[; ;user_app.c: 107:     {
-{
 "108
-[; ;user_app.c: 108:         LATA++;
-[e ++ _LATA -> -> 1 `i `Vuc ]
+[; ;user_app.c: 108:     if(RB5 == 1)
+[e $ ! == -> _RB5 `i -> 1 `i 2274  ]
 "109
-[; ;user_app.c: 109:         u32_last=1;
-[e = F15920 -> -> -> 1 `i `l `ul ]
+[; ;user_app.c: 109:     {
+{
+"110
+[; ;user_app.c: 110:         LATA++;
+[e ++ _LATA -> -> 1 `i `Vuc ]
 "111
-[; ;user_app.c: 111:     }
+[; ;user_app.c: 111:         u32_last=1;
+[e = F15920 -> -> -> 1 `i `l `ul ]
+"113
+[; ;user_app.c: 113:     }
 }
 [e :U 2274 ]
-"112
-[; ;user_app.c: 112:     if(RB5 == 0)
-[e $ ! == -> _RB5 `i -> 0 `i 2275  ]
-"113
-[; ;user_app.c: 113:     {
-{
 "114
-[; ;user_app.c: 114:         u32_last = 0;
-[e = F15920 -> -> -> 0 `i `l `ul ]
+[; ;user_app.c: 114:     if(RB5 == 0)
+[e $ ! == -> _RB5 `i -> 0 `i 2275  ]
 "115
-[; ;user_app.c: 115:     }
+[; ;user_app.c: 115:     {
+{
+"116
+[; ;user_app.c: 116:         u32_last = 0;
+[e = F15920 -> -> -> 0 `i `l `ul ]
+"117
+[; ;user_app.c: 117:     }
 }
 [e :U 2275 ]
-"122
-[; ;user_app.c: 122: }
+"124
+[; ;user_app.c: 124: }
 [e :UE 2273 ]
 }

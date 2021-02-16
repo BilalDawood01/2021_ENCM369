@@ -27317,6 +27317,8 @@ void UserAppRun(void)
 {
 
     static u32 u32_last = 0;
+    u32 u32Counter;
+    u32 u32Max = 0x7F;
     LATA = 0x80;
 
 
