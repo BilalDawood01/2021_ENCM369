@@ -95,7 +95,7 @@ Promises:
 void UserAppRun(void)
 { 
     //u32 u32Counter;
-    //static u32 u32_last = 0; //getting the first state of the input.        
+    static u32 u32_last = 0; //getting the first state of the input.        
     LATA = 0x80; // need to enable 1000 0000 bit permanently.
     //Max configuration for 6 bits is 0011 1111, 0x4F
     
@@ -103,10 +103,15 @@ void UserAppRun(void)
 //    {
 //      LATA++;
 //    }
-    if(RB5 ==1)
+    if(RB5 == 1)
     {
         LATA++;
+        u32_last=1;
         //u32_last = 1;
+    }
+    if(RB5 == 0)
+    {
+        u32_last = 0;
     }
 //    if((RB5 == 0) && (u32_last == 1))
 //    {
