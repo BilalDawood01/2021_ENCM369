@@ -27310,18 +27310,25 @@ extern volatile u32 G_u32SystemFlags;
 # 77 "user_app.c"
 void UserAppInitialize(void)
 {
-    u8 u8Counter;
-    LATA = 0x80;
 
-    for(u8Counter = 0; u8Counter <= 0x4F;u8Counter++ )
-    {
-      LATA++;
-      _delay((unsigned long)((500)*(64000000/4000.0)));
-    }
 }
-# 102 "user_app.c"
+# 95 "user_app.c"
 void UserAppRun(void)
 {
 
+    static u32 u32_last= 0;
+
+    LATA = 0x80;
+
+
+
+
+
+
+    if(RB5 != u32_last)
+    {
+        LATA++;
+        u32_last = RB5;
+    }
 
 }

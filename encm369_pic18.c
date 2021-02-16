@@ -88,11 +88,13 @@ Promises:
 */
 void GpioSetup(void)
 {
-    LATA = 0x00;
-    TRISA = 0x00;
-    ANSELA = 0x00;
+    LATA = 0x00;//Sets A ports as output ports
+    TRISA = 0x00;//all A ports are output ports.
+    ANSELA = 0x00;//enable digital drivers.
     LATA = 0x80;//for last LED on counter (acts as last bit)
-  
+    PORTB = 0x00;//Reads data from B ports. (Initialized to 0)
+    ANSELB = 0x00; //enable digital drivers
+    TRISB = 0x30;//Need pins (RB4 and RB5, 00110000) to be inputs, so: 0x30
 } /* end GpioSetup() */
 
 
