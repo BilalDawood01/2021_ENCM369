@@ -94,36 +94,17 @@ Promises:
 */
 void UserAppRun(void)
 { 
-    //u32 u32Counter;
-    static u32 u32_last = 0; //getting the first state of the input. 
-    u32 u32Counter;
-    u32 u32Max = 0x7F; //0111 1111 = 0x7F
-    LATA = 0x80; // need to enable 1000 0000 bit permanently.
-    //Max configuration for 6 bits is 0011 1111, 0x4F
-    
-//    for(u32Counter = 0; u32Counter <= 0x4F;u32Counter++ )
-//    {
-//      LATA++;
-//    }
-    if(RB5 == 1)
+    static u32 u32_last = 0;//Keeps track of last state.
+    u32 u32Max = 0xBF; //why is it BF and not 0111 1111 = 0x7F
+    if(LATA == u32Max){//Makes sure 0111 1111 is the max counter value we can have. Resets to 0100 0000
+        LATA = 0x80;//why isnt this 0x40? isnt that 0100 0000
+    }
+    if(RB5 != u32_last)
     {
         LATA++;
-        u32_last=1;
-        //u32_last = 1;
+        u32_last = RB5;
     }
-    if(RB5 == 0)
-    {
-        u32_last = 0;
-    }
-//    if((RB5 == 0) && (u32_last == 1))
-//    {
-//        LATA++;
-//        u32_last = 0;
-//    }
-    
 } /* end UserAppRun */
-
-
 
 /*------------------------------------------------------------------------------------------------------------------*/
 /*! @privatesection */                                                                                            

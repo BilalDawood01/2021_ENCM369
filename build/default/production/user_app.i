@@ -27298,6 +27298,7 @@ void UserAppRun(void);
 
 
 
+
 volatile u8 G_u8UserAppFlags;
 
 
@@ -27306,15 +27307,27 @@ volatile u8 G_u8UserAppFlags;
 extern volatile u32 G_u32SystemTime1ms;
 extern volatile u32 G_u32SystemTime1s;
 extern volatile u32 G_u32SystemFlags;
-# 76 "user_app.c"
+# 77 "user_app.c"
 void UserAppInitialize(void)
 {
-
 
 }
 # 95 "user_app.c"
 void UserAppRun(void)
 {
+# 123 "user_app.c"
+    static u32 u32_last = 0;
 
+    if(LATA == 0xBF){
+        LATA = 0x80;
+    }
+
+    if((RB5 == 1) && (u32_last == 0)){
+        LATA++;
+        u32_last = 1;
+    }
+    if(RB5 == 0){
+        u32_last = 0;
+    }
 
 }

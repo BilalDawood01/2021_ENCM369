@@ -27315,31 +27315,14 @@ void UserAppInitialize(void)
 # 95 "user_app.c"
 void UserAppRun(void)
 {
-
     static u32 u32_last = 0;
-    u32 u32Counter;
-    u32 u32Max = 0x7F;
-    LATA = 0x80;
-
-
-
-
-
-
-    if(RB5 == 1)
+    u32 u32Max = 0xBF;
+    if(LATA == u32Max){
+        LATA = 0x80;
+    }
+    if(RB5 != u32_last)
     {
         LATA++;
-        u32_last=1;
-
+        u32_last = RB5;
     }
-    if(RB5 == 0)
-    {
-        u32_last = 0;
-    }
-
-
-
-
-
-
 }
