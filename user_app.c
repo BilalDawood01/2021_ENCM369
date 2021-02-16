@@ -76,14 +76,7 @@ Promises:
 */
 void UserAppInitialize(void)
 {
-    u8 u8Counter;
-    LATA = 0x80; // need to enable 1000 0000 bit permanently.
-    //Max configuration for 6 bits is 0011 1111, 0x4F
-    for(u8Counter = 0; u8Counter <= 0x4F;u8Counter++ )
-    {
-      LATA++;
-      __delay_ms(500); //makes sure counter doesnt speedrun
-    }
+   
 } /* end UserAppInitialize() */
 
   
@@ -100,9 +93,14 @@ Promises:
 
 */
 void UserAppRun(void)
-{
-
-
+{ 
+    u8 u8Counter;
+    LATA = 0x80; // need to enable 1000 0000 bit permanently.
+    //Max configuration for 6 bits is 0011 1111, 0x4F
+    for(u8Counter = 0; u8Counter <= 0x4F;u8Counter++ )
+    {
+      LATA++;
+    }
 } /* end UserAppRun */
 
 
