@@ -39,11 +39,22 @@
 [v _main main `(v  1 e 1 0 ]
 "77 C:\Users\bilal\Documents\GitHub\2021_ENCM369\user_app.c
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
-"102
+"96
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
-"37918 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+"124
+[v _TimeXus TimeXus `(v  1 e 1 0 ]
+"22235 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+[v _TMR0L TMR0L `VEuc  1 e 1 @792 ]
+"22373
+[v _TMR0H TMR0H `VEuc  1 e 1 @793 ]
+"22627
+[v _T0CON0 T0CON0 `VEuc  1 e 1 @794 ]
+"22725
+[v _T0CON1 T0CON1 `VEuc  1 e 1 @795 ]
 "37918
 [v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
+"44870
+[v _PIR3 PIR3 `VEuc  1 e 1 @1201 ]
 "45585
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
 "45840
@@ -59,19 +70,36 @@
 "35 C:\Users\bilal\Documents\GitHub\2021_ENCM369\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"67
+"72
 } 0
-"102 C:\Users\bilal\Documents\GitHub\2021_ENCM369\user_app.c
+"96 C:\Users\bilal\Documents\GitHub\2021_ENCM369\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
+"109
+[v UserAppRun@u16LataState u16LataState `us  1 a 2 1 ]
 "106
+[v UserAppRun@u16TimerCounter u16TimerCounter `us  1 s 2 u16TimerCounter ]
+"107
+[v UserAppRun@u16LedState u16LedState `[1]us  1 s 2 u16LedState ]
+"122
 } 0
 "77
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
 {
-"79
-[v UserAppInitialize@u8Counter u8Counter `uc  1 a 1 2 ]
-"87
+"81
+} 0
+"124
+[v _TimeXus TimeXus `(v  1 e 1 0 ]
+{
+"127
+[v TimeXus@u16OverFlow u16OverFlow `us  1 a 2 4 ]
+"130
+[v TimeXus@u8HighInput u8HighInput `uc  1 a 1 3 ]
+"129
+[v TimeXus@u8LowInput u8LowInput `uc  1 a 1 2 ]
+"124
+[v TimeXus@u16Microseconds u16Microseconds `us  1 p 2 0 ]
+"138
 } 0
 "133 C:\Users\bilal\Documents\GitHub\2021_ENCM369\encm369_pic18.c
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]

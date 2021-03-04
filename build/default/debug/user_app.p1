@@ -1,11 +1,22 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"45585 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+"22627 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22627: extern volatile unsigned char T0CON0 __attribute__((address(0x31A)));
+[v _T0CON0 `Vuc ~T0 @X0 0 e@794 ]
+"22725
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22725: extern volatile unsigned char T0CON1 __attribute__((address(0x31B)));
+[v _T0CON1 `Vuc ~T0 @X0 0 e@795 ]
+"45585
 [; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 45585: extern volatile unsigned char LATA __attribute__((address(0x4BE)));
 [v _LATA `Vuc ~T0 @X0 0 e@1214 ]
-[v F183 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\builtins.h
-[v __delay `JF183 ~T0 @X0 0 e ]
-[p i __delay ]
+"22235
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22235: extern volatile unsigned char TMR0L __attribute__((address(0x318)));
+[v _TMR0L `Vuc ~T0 @X0 0 e@792 ]
+"22373
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22373: extern volatile unsigned char TMR0H __attribute__((address(0x319)));
+[v _TMR0H `Vuc ~T0 @X0 0 e@793 ]
+"44870
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44870: extern volatile unsigned char PIR3 __attribute__((address(0x4B1)));
+[v _PIR3 `Vuc ~T0 @X0 0 e@1201 ]
 "30 ./configuration.h
 [p x FEXTOSC  =  OFF     ]
 "31
@@ -2539,47 +2550,100 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _UserAppInitialize ]
 [f ]
 "79
-[; ;user_app.c: 79:     u8 u8Counter;
-[v _u8Counter `uc ~T0 @X0 1 a ]
+[; ;user_app.c: 79:     T0CON0 = 0x90;
+[e = _T0CON0 -> -> 144 `i `uc ]
 "80
-[; ;user_app.c: 80:     LATA = 0x80;
-[e = _LATA -> -> 128 `i `uc ]
-"82
-[; ;user_app.c: 82:     for(u8Counter = 0; u8Counter <= 0x4F;u8Counter++ )
-{
-[e = _u8Counter -> -> 0 `i `uc ]
-[e $ <= -> _u8Counter `i -> 79 `i 2273  ]
-[e $U 2274  ]
-[e :U 2273 ]
-"83
-[; ;user_app.c: 83:     {
-{
-"84
-[; ;user_app.c: 84:       LATA++;
-[e ++ _LATA -> -> 1 `i `Vuc ]
-"85
-[; ;user_app.c: 85:       _delay((unsigned long)((500)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"86
-[; ;user_app.c: 86:     }
-}
-[e ++ _u8Counter -> -> 1 `i `uc ]
-[e $ <= -> _u8Counter `i -> 79 `i 2273  ]
-[e :U 2274 ]
-}
-"87
-[; ;user_app.c: 87: }
+[; ;user_app.c: 80:     T0CON1 = 0x54;
+[e = _T0CON1 -> -> 84 `i `uc ]
+"81
+[; ;user_app.c: 81: }
 [e :UE 2272 ]
 }
-"102
-[; ;user_app.c: 102: void UserAppRun(void)
+"96
+[; ;user_app.c: 96: void UserAppRun(void)
 [v _UserAppRun `(v ~T0 @X0 1 ef ]
-"103
-[; ;user_app.c: 103: {
+"97
+[; ;user_app.c: 97: {
 {
 [e :U _UserAppRun ]
 [f ]
 "106
-[; ;user_app.c: 106: }
-[e :UE 2276 ]
+[; ;user_app.c: 106:     static u16 u16TimerCounter = 0;
+[v F15922 `us ~T0 @X0 1 s u16TimerCounter ]
+[i F15922
+-> -> 0 `i `us
+]
+"107
+[; ;user_app.c: 107:     static u16 u16LedState[] = {0x2A};
+[v F15923 `us ~T0 @X0 -> -> 1 `i `ux s u16LedState ]
+[i F15923
+:U ..
+-> -> 42 `i `us
+..
+]
+"109
+[; ;user_app.c: 109:     u16 u16LataState = 0x80&LATA;
+[v _u16LataState `us ~T0 @X0 1 a ]
+[e = _u16LataState -> & -> 128 `i -> _LATA `i `us ]
+"111
+[; ;user_app.c: 111:     if(u16TimerCounter==250)
+[e $ ! == -> F15922 `ui -> -> 250 `i `ui 2274  ]
+"112
+[; ;user_app.c: 112:     { u16LedState[0] ^= 0x3F;
+{
+[e =^ *U + &U F15923 * -> -> -> 0 `i `ui `ux -> -> # *U &U F15923 `ui `ux -> -> 63 `i `us ]
+"113
+[; ;user_app.c: 113:         LATA = u16LataState|u16LedState[0];
+[e = _LATA -> | -> _u16LataState `ui -> *U + &U F15923 * -> -> -> 0 `i `ui `ux -> -> # *U &U F15923 `ui `ux `ui `uc ]
+"116
+[; ;user_app.c: 116:         u16TimerCounter=0;
+[e = F15922 -> -> 0 `i `us ]
+"117
+[; ;user_app.c: 117:     }
+}
+[e :U 2274 ]
+"119
+[; ;user_app.c: 119:     u16TimerCounter++;
+[e ++ F15922 -> -> 1 `i `us ]
+"122
+[; ;user_app.c: 122: }
+[e :UE 2273 ]
+}
+"124
+[; ;user_app.c: 124: void TimeXus(u16 u16Microseconds){
+[v _TimeXus `(v ~T0 @X0 1 ef1`us ]
+{
+[e :U _TimeXus ]
+[v _u16Microseconds `us ~T0 @X0 1 r1 ]
+[f ]
+"125
+[; ;user_app.c: 125:     T0CON0 &= 0x7F;
+[e =& _T0CON0 -> -> 127 `i `Vuc ]
+"127
+[; ;user_app.c: 127:     u16 u16OverFlow = 0xFFFF - u16Microseconds;
+[v _u16OverFlow `us ~T0 @X0 1 a ]
+[e = _u16OverFlow -> - -> 65535 `ui -> _u16Microseconds `ui `us ]
+"129
+[; ;user_app.c: 129:     u8 u8LowInput = u16OverFlow & 0xFF;
+[v _u8LowInput `uc ~T0 @X0 1 a ]
+[e = _u8LowInput -> & -> _u16OverFlow `ui -> -> 255 `i `ui `uc ]
+"130
+[; ;user_app.c: 130:     u8 u8HighInput = (u16OverFlow>>8)& 0xFF;
+[v _u8HighInput `uc ~T0 @X0 1 a ]
+[e = _u8HighInput -> & >> -> _u16OverFlow `ui -> 8 `i -> -> 255 `i `ui `uc ]
+"132
+[; ;user_app.c: 132:     TMR0L = u8LowInput;
+[e = _TMR0L _u8LowInput ]
+"133
+[; ;user_app.c: 133:     TMR0H = u8HighInput;
+[e = _TMR0H _u8HighInput ]
+"135
+[; ;user_app.c: 135:     PIR3 = PIR3&0x7F;
+[e = _PIR3 -> & -> _PIR3 `i -> 127 `i `uc ]
+"137
+[; ;user_app.c: 137:     T0CON0 = T0CON0 | 0X80;
+[e = _T0CON0 -> | -> _T0CON0 `i -> 128 `i `uc ]
+"138
+[; ;user_app.c: 138: }
+[e :UE 2275 ]
 }

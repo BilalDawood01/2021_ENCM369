@@ -27273,7 +27273,7 @@ typedef enum {ACTIVE_LOW = 0, ACTIVE_HIGH = 1} GpioActiveType;
 
 
 # 1 "./encm369_pic18.h" 1
-# 60 "./encm369_pic18.h"
+# 62 "./encm369_pic18.h"
 void ClockSetup(void);
 void GpioSetup(void);
 
@@ -27289,6 +27289,7 @@ void SystemSleep(void);
 # 27 "./user_app.h"
 void UserAppInitialize(void);
 void UserAppRun(void);
+void TimeXus(u16 u16Microseconds);
 # 106 "./configuration.h" 2
 # 26 "user_app.c" 2
 
@@ -27310,18 +27311,43 @@ extern volatile u32 G_u32SystemFlags;
 # 77 "user_app.c"
 void UserAppInitialize(void)
 {
-    u8 u8Counter;
-    LATA = 0x80;
-
-    for(u8Counter = 0; u8Counter <= 0x4F;u8Counter++ )
-    {
-      LATA++;
-      _delay((unsigned long)((500)*(64000000/4000.0)));
-    }
+    T0CON0 = 0x90;
+    T0CON1 = 0x54;
 }
-# 102 "user_app.c"
+# 96 "user_app.c"
 void UserAppRun(void)
 {
+# 106 "user_app.c"
+    static u16 u16TimerCounter = 0;
+    static u16 u16LedState[] = {0x2A};
+
+    u16 u16LataState = 0x80&LATA;
+
+    if(u16TimerCounter==250)
+    { u16LedState[0] ^= 0x3F;
+        LATA = u16LataState|u16LedState[0];
 
 
+        u16TimerCounter=0;
+    }
+
+    u16TimerCounter++;
+
+
+}
+
+void TimeXus(u16 u16Microseconds){
+    T0CON0 &= 0x7F;
+
+    u16 u16OverFlow = 0xFFFF - u16Microseconds;
+
+    u8 u8LowInput = u16OverFlow & 0xFF;
+    u8 u8HighInput = (u16OverFlow>>8)& 0xFF;
+
+    TMR0L = u8LowInput;
+    TMR0H = u8HighInput;
+
+    PIR3 = PIR3&0x7F;
+
+    T0CON0 = T0CON0 | 0X80;
 }

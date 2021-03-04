@@ -76,14 +76,8 @@ Promises:
 */
 void UserAppInitialize(void)
 {
-    u8 u8Counter;
-    LATA = 0x80; // need to enable 1000 0000 bit permanently.
-    //Max configuration for 6 bits is 0011 1111, 0x4F
-    for(u8Counter = 0; u8Counter <= 0x4F;u8Counter++ )
-    {
-      LATA++;
-      __delay_ms(500); //makes sure counter doesnt speedrun
-    }
+    T0CON0 = 0x90;
+    T0CON1 = 0x54;  
 } /* end UserAppInitialize() */
 
   
@@ -101,10 +95,47 @@ Promises:
 */
 void UserAppRun(void)
 {
+//    static u16 u16Counter = 0;
+//    if(u16Counter == 500)
+//    {
+//        RA0 ^= 0x01; //
+//        u16Counter = 0;
+//    }
+//    u16Counter++;
+    
+    static u16 u16TimerCounter = 0;             
+    static u16 u16LedState[] = {0x2A}; //the value to be bitmasked                    
+       
+    u16 u16LataState = 0x80&LATA;//clears all LEDs to be written in               
+    
+    if(u16TimerCounter==250)
+    {   u16LedState[0] ^= 0x3F;//all 1s becomes zero, zeros become 1
+        LATA = u16LataState|u16LedState[0];//updates temp lata variable with new 
+                                          //LED sequence
 
-
+        u16TimerCounter=0;
+    }
+ 
+    u16TimerCounter++;
+    
+    
 } /* end UserAppRun */
 
+void TimeXus(u16 u16Microseconds){
+    T0CON0 &= 0x7F; //turns off
+    
+    u16 u16OverFlow = 0xFFFF - u16Microseconds; //to make sure reset is done properly 
+    
+    u8 u8LowInput = u16OverFlow & 0xFF;
+    u8 u8HighInput = (u16OverFlow>>8)& 0xFF;
+    
+    TMR0L = u8LowInput; //stores 8 lower bits of our counter
+    TMR0H = u8HighInput; //stores 8 MSB of counter
+    
+    PIR3 = PIR3&0x7F;//sets flag low, resets warning to let the timer know the counter is done
+    
+    T0CON0 = T0CON0 | 0X80;//turns the timer back on
+}
 
 
 /*------------------------------------------------------------------------------------------------------------------*/

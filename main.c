@@ -60,6 +60,11 @@ void main(void)
     /* System sleep */
     HEARTBEAT_OFF();
     SystemSleep();
+    TimeXus(1000); //1000 micro sec is 1 sec
+    while((PIR3 & 0x80) != 0x80)//to wait till timer is done
+    {
+        //infintely loops until while loop is over
+    }
     HEARTBEAT_ON();
     
   } /* end while(1) main super loop */

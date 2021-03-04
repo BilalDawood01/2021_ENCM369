@@ -27277,7 +27277,7 @@ typedef enum {ACTIVE_LOW = 0, ACTIVE_HIGH = 1} GpioActiveType;
 
 
 # 1 "./encm369_pic18.h" 1
-# 60 "./encm369_pic18.h"
+# 62 "./encm369_pic18.h"
 void ClockSetup(void);
 void GpioSetup(void);
 
@@ -27293,6 +27293,7 @@ void SystemSleep(void);
 # 27 "./user_app.h"
 void UserAppInitialize(void);
 void UserAppRun(void);
+void TimeXus(u16 u16Microseconds);
 # 106 "./configuration.h" 2
 # 6 "main.c" 2
 
@@ -27333,9 +27334,14 @@ void main(void)
 
 
 
-                   ;
+    (LATA &= 0x7F);
     SystemSleep();
-                  ;
+    TimeXus(1000);
+    while((PIR3 & 0x80) != 0x80)
+    {
+
+    }
+    (LATA |= 0x80);
 
   }
 

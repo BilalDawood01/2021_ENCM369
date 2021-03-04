@@ -1,4 +1,19 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"22627 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22627: extern volatile unsigned char T0CON0 __attribute__((address(0x31A)));
+[v _T0CON0 `Vuc ~T0 @X0 0 e@794 ]
+"22725
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22725: extern volatile unsigned char T0CON1 __attribute__((address(0x31B)));
+[v _T0CON1 `Vuc ~T0 @X0 0 e@795 ]
+"22235
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22235: extern volatile unsigned char TMR0L __attribute__((address(0x318)));
+[v _TMR0L `Vuc ~T0 @X0 0 e@792 ]
+"22373
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22373: extern volatile unsigned char TMR0H __attribute__((address(0x319)));
+[v _TMR0H `Vuc ~T0 @X0 0 e@793 ]
+"44870
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44870: extern volatile unsigned char PIR3 __attribute__((address(0x4B1)));
+[v _PIR3 `Vuc ~T0 @X0 0 e@1201 ]
 "30 ./configuration.h
 [p x FEXTOSC  =  OFF     ]
 "31
@@ -2520,30 +2535,74 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47642
 [; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 47642: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"33 user_app.c
-[; ;user_app.c: 33: volatile u8 G_u8UserAppFlags;
+"34 user_app.c
+[; ;user_app.c: 34: volatile u8 G_u8UserAppFlags;
 [v _G_u8UserAppFlags `Vuc ~T0 @X0 1 e ]
-"76
-[; ;user_app.c: 76: void UserAppInitialize(void)
-[v _UserAppInitialize `(v ~T0 @X0 1 ef ]
 "77
-[; ;user_app.c: 77: {
+[; ;user_app.c: 77: void UserAppInitialize(void)
+[v _UserAppInitialize `(v ~T0 @X0 1 ef ]
+"78
+[; ;user_app.c: 78: {
 {
 [e :U _UserAppInitialize ]
 [f ]
+"79
+[; ;user_app.c: 79:     T0CON0 = 0x90;
+[e = _T0CON0 -> -> 144 `i `uc ]
 "80
-[; ;user_app.c: 80: }
+[; ;user_app.c: 80:     T0CON1 = 0x54;
+[e = _T0CON1 -> -> 84 `i `uc ]
+"81
+[; ;user_app.c: 81: }
 [e :UE 2272 ]
 }
-"95
-[; ;user_app.c: 95: void UserAppRun(void)
-[v _UserAppRun `(v ~T0 @X0 1 ef ]
 "96
-[; ;user_app.c: 96: {
+[; ;user_app.c: 96: void UserAppRun(void)
+[v _UserAppRun `(v ~T0 @X0 1 ef ]
+"97
+[; ;user_app.c: 97: {
 {
 [e :U _UserAppRun ]
 [f ]
 "99
 [; ;user_app.c: 99: }
 [e :UE 2273 ]
+}
+"101
+[; ;user_app.c: 101: void TimeXus(u16 u16Microseconds){
+[v _TimeXus `(v ~T0 @X0 1 ef1`us ]
+{
+[e :U _TimeXus ]
+[v _u16Microseconds `us ~T0 @X0 1 r1 ]
+[f ]
+"102
+[; ;user_app.c: 102:     T0CON0 &= 0x7F;
+[e =& _T0CON0 -> -> 127 `i `Vuc ]
+"104
+[; ;user_app.c: 104:     u16 u16OverFlow = 0xFFFF - u16Microseconds;
+[v _u16OverFlow `us ~T0 @X0 1 a ]
+[e = _u16OverFlow -> - -> 65535 `ui -> _u16Microseconds `ui `us ]
+"106
+[; ;user_app.c: 106:     u8 u8LowInput = u16OverFlow & 0xFF;
+[v _u8LowInput `uc ~T0 @X0 1 a ]
+[e = _u8LowInput -> & -> _u16OverFlow `ui -> -> 255 `i `ui `uc ]
+"107
+[; ;user_app.c: 107:     u8 u8HighInput = (u16OverFlow>>8)& 0xFF;
+[v _u8HighInput `uc ~T0 @X0 1 a ]
+[e = _u8HighInput -> & >> -> _u16OverFlow `ui -> 8 `i -> -> 255 `i `ui `uc ]
+"109
+[; ;user_app.c: 109:     TMR0L = u8LowInput;
+[e = _TMR0L _u8LowInput ]
+"110
+[; ;user_app.c: 110:     TMR0H = u8HighInput;
+[e = _TMR0H _u8HighInput ]
+"112
+[; ;user_app.c: 112:     PIR3 = PIR3&0x7F;
+[e = _PIR3 -> & -> _PIR3 `i -> 127 `i `uc ]
+"114
+[; ;user_app.c: 114:     T0CON0 = T0CON0 | 0X80;
+[e = _T0CON0 -> | -> _T0CON0 `i -> 128 `i `uc ]
+"115
+[; ;user_app.c: 115: }
+[e :UE 2274 ]
 }
