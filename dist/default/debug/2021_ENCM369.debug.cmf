@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\bilal\AppData\Local\Temp\sbnc.o
+$C:\Users\bilal\AppData\Local\Temp\s27s.o
 idloc IDLOC 5 200000 200000 20 1
 init CODE 0 1FFFC 1FFFC 4 1
 reset_vec CODE 0 0 0 4 1
@@ -130,18 +130,18 @@ $dist/default/debug\2021_ENCM369.debug.o
 1FF5E text0 CODE >47:C:\Users\bilal\Documents\GitHub\2021_ENCM369\main.c
 1FF62 text0 CODE >57:C:\Users\bilal\Documents\GitHub\2021_ENCM369\main.c
 1FF66 text0 CODE >62:C:\Users\bilal\Documents\GitHub\2021_ENCM369\main.c
-1FEFC cinit CODE >5090:C:\Users\bilal\AppData\Local\Temp\sbnc.s
-1FEFC cinit CODE >5092:C:\Users\bilal\AppData\Local\Temp\sbnc.s
-1FEFC cinit CODE >5095:C:\Users\bilal\AppData\Local\Temp\sbnc.s
-1FEFC cinit CODE >5119:C:\Users\bilal\AppData\Local\Temp\sbnc.s
-1FF00 cinit CODE >5120:C:\Users\bilal\AppData\Local\Temp\sbnc.s
-1FF02 cinit CODE >5121:C:\Users\bilal\AppData\Local\Temp\sbnc.s
-1FF02 cinit CODE >5122:C:\Users\bilal\AppData\Local\Temp\sbnc.s
-1FF04 cinit CODE >5123:C:\Users\bilal\AppData\Local\Temp\sbnc.s
-1FF06 cinit CODE >5124:C:\Users\bilal\AppData\Local\Temp\sbnc.s
-1FF08 cinit CODE >5130:C:\Users\bilal\AppData\Local\Temp\sbnc.s
-1FF08 cinit CODE >5132:C:\Users\bilal\AppData\Local\Temp\sbnc.s
-1FF0A cinit CODE >5133:C:\Users\bilal\AppData\Local\Temp\sbnc.s
+1FEFC cinit CODE >5090:C:\Users\bilal\AppData\Local\Temp\s27s.s
+1FEFC cinit CODE >5092:C:\Users\bilal\AppData\Local\Temp\s27s.s
+1FEFC cinit CODE >5095:C:\Users\bilal\AppData\Local\Temp\s27s.s
+1FEFC cinit CODE >5119:C:\Users\bilal\AppData\Local\Temp\s27s.s
+1FF00 cinit CODE >5120:C:\Users\bilal\AppData\Local\Temp\s27s.s
+1FF02 cinit CODE >5121:C:\Users\bilal\AppData\Local\Temp\s27s.s
+1FF02 cinit CODE >5122:C:\Users\bilal\AppData\Local\Temp\s27s.s
+1FF04 cinit CODE >5123:C:\Users\bilal\AppData\Local\Temp\s27s.s
+1FF06 cinit CODE >5124:C:\Users\bilal\AppData\Local\Temp\s27s.s
+1FF08 cinit CODE >5130:C:\Users\bilal\AppData\Local\Temp\s27s.s
+1FF08 cinit CODE >5132:C:\Users\bilal\AppData\Local\Temp\s27s.s
+1FF0A cinit CODE >5133:C:\Users\bilal\AppData\Local\Temp\s27s.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -160,22 +160,22 @@ __Hspace_1 51A 0 ABS 0 - dist/default/debug\2021_ENCM369.debug.o
 __Hspace_2 0 0 ABS 0 - dist/default/debug\2021_ENCM369.debug.o
 __Hspace_4 60000A 0 ABS 0 - dist/default/debug\2021_ENCM369.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\2021_ENCM369.debug.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\bilal\AppData\Local\Temp\sbnc.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\bilal\AppData\Local\Temp\s27s.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\2021_ENCM369.debug.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\2021_ENCM369.debug.o
 _LATA 4BE 0 ABS 0 - dist/default/debug\2021_ENCM369.debug.o
-___sp 0 0 STACK 2 stack C:\Users\bilal\AppData\Local\Temp\sbnc.o
+___sp 0 0 STACK 2 stack C:\Users\bilal\AppData\Local\Temp\s27s.o
 _main 1FF50 0 CODE 0 text0 dist/default/debug\2021_ENCM369.debug.o
-start 1FFFC 0 CODE 0 init C:\Users\bilal\AppData\Local\Temp\sbnc.o
+start 1FFFC 0 CODE 0 init C:\Users\bilal\AppData\Local\Temp\s27s.o
 __size_of_main 0 0 ABS 0 - dist/default/debug\2021_ENCM369.debug.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\2021_ENCM369.debug.o
 __size_of_SystemSleep 0 0 ABS 0 - dist/default/debug\2021_ENCM369.debug.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/debug\2021_ENCM369.debug.o
-__accesstop 560 0 ABS 0 - C:\Users\bilal\AppData\Local\Temp\sbnc.o
-intlevel0 0 0 CODE 0 text C:\Users\bilal\AppData\Local\Temp\sbnc.o
-intlevel1 0 0 CODE 0 text C:\Users\bilal\AppData\Local\Temp\sbnc.o
-intlevel2 0 0 CODE 0 text C:\Users\bilal\AppData\Local\Temp\sbnc.o
-intlevel3 0 0 CODE 0 text C:\Users\bilal\AppData\Local\Temp\sbnc.o
+__accesstop 560 0 ABS 0 - C:\Users\bilal\AppData\Local\Temp\s27s.o
+intlevel0 0 0 CODE 0 text C:\Users\bilal\AppData\Local\Temp\s27s.o
+intlevel1 0 0 CODE 0 text C:\Users\bilal\AppData\Local\Temp\s27s.o
+intlevel2 0 0 CODE 0 text C:\Users\bilal\AppData\Local\Temp\s27s.o
+intlevel3 0 0 CODE 0 text C:\Users\bilal\AppData\Local\Temp\s27s.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\2021_ENCM369.debug.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\2021_ENCM369.debug.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/debug\2021_ENCM369.debug.o
@@ -184,8 +184,8 @@ _UserAppRun 1FF72 0 CODE 0 text1 dist/default/debug\2021_ENCM369.debug.o
 _ANSELA 400 0 ABS 0 - dist/default/debug\2021_ENCM369.debug.o
 _ANSELB 408 0 ABS 0 - dist/default/debug\2021_ENCM369.debug.o
 _G_u32SystemTime1s 509 0 COMRAM 1 bssCOMRAM dist/default/debug\2021_ENCM369.debug.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\bilal\AppData\Local\Temp\sbnc.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\bilal\AppData\Local\Temp\sbnc.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\bilal\AppData\Local\Temp\s27s.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\bilal\AppData\Local\Temp\s27s.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\2021_ENCM369.debug.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\2021_ENCM369.debug.o
 __size_of_UserAppInitialize 0 0 ABS 0 - dist/default/debug\2021_ENCM369.debug.o
@@ -245,7 +245,7 @@ __Hbank36 0 0 ABS 0 bank36 dist/default/debug\2021_ENCM369.debug.o
 __Hbank37 0 0 ABS 0 bank37 dist/default/debug\2021_ENCM369.debug.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\2021_ENCM369.debug.o
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\2021_ENCM369.debug.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\bilal\AppData\Local\Temp\sbnc.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\bilal\AppData\Local\Temp\s27s.o
 _SystemSleep 1FEF8 0 CODE 0 text3 dist/default/debug\2021_ENCM369.debug.o
 __Hcomram 0 0 ABS 0 comram dist/default/debug\2021_ENCM369.debug.o
 __Hconfig 30000A 0 CONFIG 4 config dist/default/debug\2021_ENCM369.debug.o
@@ -340,8 +340,8 @@ __end_of_SysTickSetup 1FF50 0 CODE 0 text4 dist/default/debug\2021_ENCM369.debug
 _UserAppInitialize 1FEFA 0 CODE 0 text2 dist/default/debug\2021_ENCM369.debug.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\2021_ENCM369.debug.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug\2021_ENCM369.debug.o
-stackhi 25FF 0 ABS 0 - C:\Users\bilal\AppData\Local\Temp\sbnc.o
-stacklo 560 0 ABS 0 - C:\Users\bilal\AppData\Local\Temp\sbnc.o
+stackhi 25FF 0 ABS 0 - C:\Users\bilal\AppData\Local\Temp\s27s.o
+stacklo 560 0 ABS 0 - C:\Users\bilal\AppData\Local\Temp\s27s.o
 __Lirdata 0 0 CODE 0 irdata dist/default/debug\2021_ENCM369.debug.o
 __Lspace_0 0 0 ABS 0 - dist/default/debug\2021_ENCM369.debug.o
 __Lspace_1 0 0 ABS 0 - dist/default/debug\2021_ENCM369.debug.o
@@ -364,7 +364,7 @@ __ptext4 1FF2E 0 CODE 0 text4 dist/default/debug\2021_ENCM369.debug.o
 __ptext5 1FF0E 0 CODE 0 text5 dist/default/debug\2021_ENCM369.debug.o
 __ptext6 1FEF6 0 CODE 0 text6 dist/default/debug\2021_ENCM369.debug.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/debug\2021_ENCM369.debug.o
-__ramtop 2600 0 RAM 0 ramtop C:\Users\bilal\AppData\Local\Temp\sbnc.o
+__ramtop 2600 0 RAM 0 ramtop C:\Users\bilal\AppData\Local\Temp\s27s.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/debug\2021_ENCM369.debug.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\2021_ENCM369.debug.o
 _ClockSetup 1FEF6 0 CODE 0 text6 dist/default/debug\2021_ENCM369.debug.o
