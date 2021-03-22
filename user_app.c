@@ -95,30 +95,7 @@ Promises:
 */
 void UserAppRun(void)
 {
-//    static u16 u16Counter = 0;
-//    if(u16Counter == 500)
-//    {
-//        RA0 ^= 0x01; //
-//        u16Counter = 0;
-//    }
-//    u16Counter++;
-    
-    static u16 u16TimerCounter = 0;             
-    static u16 u16LedState[] = {0x2A}; //the value to be bitmasked                    
-       
-    u16 u16LataState = 0x80&LATA;//clears all LEDs to be written in               
-    
-    if(u16TimerCounter==250)
-    {   u16LedState[0] ^= 0x3F;//all 1s becomes zero, zeros become 1
-        LATA = u16LataState|u16LedState[0];//updates temp lata variable with new 
-                                          //LED sequence
 
-        u16TimerCounter=0;
-    }
- 
-    u16TimerCounter++;
-    
-    
 } /* end UserAppRun */
 
 void TimeXus(u16 u16Microseconds){
