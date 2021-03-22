@@ -56,16 +56,16 @@ void main(void)
     /* Applications */
     UserAppRun();
    
-     
+
     /* System sleep */
-    HEARTBEAT_OFF();
+    //HEARTBEAT_OFF();
     SystemSleep();
-    TimeXus(1000); //1000 micro sec is 1 sec
-    while((PIR3 & 0x80) != 0x80)//to wait till timer is done
-    {
-        //infintely loops until while loop is over
-    }
-    HEARTBEAT_ON();
+#if 1 //if 0 basically comments everything in the middle
+    TimeXus(10);//1000 cycles in a s. 255 lines to execute, so divide as well 
+    while((PIR3 & 0x80) != 0x80);//to wait till timer is done
+    //DAC1DATL+=4;
+    //HEARTBEAT_ON();
+#endif 
     
   } /* end while(1) main super loop */
   

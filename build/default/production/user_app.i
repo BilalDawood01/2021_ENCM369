@@ -27317,7 +27317,24 @@ void UserAppInitialize(void)
 # 96 "user_app.c"
 void UserAppRun(void)
 {
+    static u8 direction =0;
 
+    if(direction==0)
+    {
+        DAC1DATL++;
+        if( DAC1DATL == 255)
+        {
+            direction =1;
+        }
+    }
+    if(direction == 0)
+    {
+        DAC1DATL--;
+        if (DAC1DATL==0)
+        {
+            direction=0;
+        }
+    }
 }
 
 void TimeXus(u16 u16Microseconds){
