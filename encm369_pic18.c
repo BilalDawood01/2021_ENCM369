@@ -88,21 +88,20 @@ Promises:
 */
 void GpioSetup(void)
 {
-//    LATA = 0x00;
-//    TRISA = 0x00;
-//    ANSELA = 0x00;
+    LATA = 0x00; //Clear Data latch 
+    TRISA = 0x00; // Set RA as all outputs
+    ANSELA = 0x00; // Enable digital drivers
 //    LATA = 0x80;//for last LED on counter (acts as last bit)
-    ANSELA = 0x00;
-    TRISA = 0x00;
     
     //configuration Dac 1:
-    // Dac enable  = 1 
-    // DAC output enable = 10 (only RA2 is enabled)
-    // PSS = 00 (Vdd is +ve ref)
-    // NSS = 0 (Vss is eve ref)
-    DAC1CON = 110000;
-    
-  
+    // 7: -Dac enable  = 1 
+    // 6: -0  (Dont care)
+    // 5:4 -DAC output enable = 10 (only RA2 is enabled)
+    // 3:2 -PSS = 00 (Vdd is +ve ref)
+    // 1: -0 (Dont care)
+    // 0: -NSS = 0 (Vss is eve ref)
+    // DAC1CON = 1010 0000 = 0xA0
+    DAC1CON = 0xA0; 
 } /* end GpioSetup() */
 
 
