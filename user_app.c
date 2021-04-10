@@ -239,6 +239,49 @@ Promises:
 */
 void UserAppRun(void)
 {
+    //arrays to store notes and timing for song
+    static u16 G_au16Notes[] =
+    { C4, C4, G4, G4, A4, A4, G4, F4, F4, E4, E4, D4, D4, C4, G4, G4, F4, F4, E4, E4, D4, G4, G4, F4, F4, E4, E4, D4, NN};
+    
+    static u16 G_au16Time[] = 
+    { N4, N4, N4, N4, N4, N4, N2, N4, N4, N4, N4, N4, N4, N2, N4, N4, N4, N4, N4, N4, N2, N4, N4, N4, N4, N4, N4, N2, N4};
+    
+    static u8 u8Index = 0; //index for Notes
+    static u16 u16TimeIndex = 0;
+    static u16 u16TimeCount = 0;
+    static u16 u16TimeBetweenNotes = 0;
+    static bool NextNote = 1;
+    
+    u16TimeIndex = G_au16Time[u8Index];
+
+    if(u16TimeCount == u16TimeIndex)
+    {
+        if(u16TimeBetweenNotes == RT)
+        {
+            u8Index++;
+            if(u8Index >= 29)
+            {
+                u8Index = 0;
+            }
+            u16TimeBetweenNotes = 0;
+            u16TimeCount = 0;
+            NextNote = 1;
+        }
+        else
+        {
+            u16TimeBetweenNotes++;
+            NextNote = 0;
+            InterruptTimerXus(NN, 1);
+        }
+    }
+    else
+    {
+        u16TimeCount++;
+    }
+    if(NextNote)
+    {
+        InterruptTimerXus(G_au16Notes[u8Index], 1); //sets frequency of nextnote
+    }
 
   
 } /* end UserAppRun() */
