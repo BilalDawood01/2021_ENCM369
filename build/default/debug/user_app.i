@@ -27416,10 +27416,12 @@ void UserAppInitialize(void)
     T1CON = 0x31;
 
 
+    InterruptTimerXus(16,1);
+
 
 
 }
-# 238 "user_app.c"
+# 240 "user_app.c"
 void UserAppRun(void)
 {
 

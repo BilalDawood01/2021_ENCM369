@@ -218,7 +218,7 @@ void UserAppInitialize(void)
     T1CON  = 0x31;  // b'00110001'
     
     // Test call to set frequency
-    InterruptTimerXus(16,1);
+    InterruptTimerXus(16,1); 
    
  
     
