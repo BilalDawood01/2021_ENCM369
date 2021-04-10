@@ -247,7 +247,7 @@ void UserAppRun(void)
     { N4, N4, N4, N4, N4, N4, N2, N4, N4, N4, N4, N4, N4, N2, N4, N4, N4, N4, N4, N4, N2, N4, N4, N4, N4, N4, N4, N2, N4};
     
     static u8 u8Index = 0; //index for Notes
-    static u16 u16TimeIndex = 0;
+    static u16 u16TimeIndex = 0; //indexing for time
     static u16 u16TimeCount = 0;
     static u16 u16TimeBetweenNotes = 0;
     static bool NextNote = 1;
@@ -259,7 +259,7 @@ void UserAppRun(void)
         if(u16TimeBetweenNotes == RT)
         {
             u8Index++;
-            if(u8Index >= 29)
+            if(u8Index >= 29) // resets notes index to make it start from the begining 
             {
                 u8Index = 0;
             }
@@ -270,8 +270,8 @@ void UserAppRun(void)
         else
         {
             u16TimeBetweenNotes++;
-            NextNote = 0;
-            InterruptTimerXus(NN, 1);
+            NextNote = 0; //to ensure we start from index zero
+            InterruptTimerXus(NN, 1); //for last note
         }
     }
     else
